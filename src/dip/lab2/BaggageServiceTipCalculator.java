@@ -15,8 +15,6 @@ public class BaggageServiceTipCalculator implements TipCalculator {
     private final double goodRate = 0.25;
     private final double fairRate = 0.20;
     private final double poorRate = 0.10;
-    
-  
     private double baseTipPerBag = 1.00;
     private int bagCount;
     

@@ -13,7 +13,7 @@ package dip.lab2;
 public class GamingDealerServiceTipCalculator implements TipCalculator {
         
     private double playerWinningsEntry = 0.0;
-    private double tip = 0.0;
+    private double dealerTip = 0.0;
     private final double goodRate = 0.20;
     private final double fairRate = 0.15;
     private final double poorRate = 0.10;
@@ -22,31 +22,31 @@ public class GamingDealerServiceTipCalculator implements TipCalculator {
     
     @Override
     public final double getServiceTip(){
-        return tip;
+        return dealerTip;
     }
     
     
     @Override
     public final double getCustomServiceTip(){
-        return tip;
+        return dealerTip;
     }
     
     
     public final void setCustomServiceTip(double playerWinningsEntry, double customRate){
-        tip = playerWinningsEntry * customRate;
+        dealerTip = playerWinningsEntry * customRate;
     }
     
     
     public final void setServiceTip(double playerWinningsEntry, String Rating){
         switch (Rating) {
             case "Good":
-                tip = playerWinningsEntry * goodRate;
+                dealerTip = playerWinningsEntry * goodRate;
                 break;
             case "Fair":
-                tip = playerWinningsEntry * fairRate;
+                dealerTip = playerWinningsEntry * fairRate;
                 break;
             case "Poor":
-                tip = playerWinningsEntry * poorRate;
+                dealerTip = playerWinningsEntry * poorRate;
                 break; 
         }
     }
