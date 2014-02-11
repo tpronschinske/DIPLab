@@ -4,7 +4,7 @@ public class Startup {
    
     public static void main(String[] args) {
         
-   
+        //LSP
        TipCalculator golferOne = new CaddieServiceTipCalculator();
        
        golferOne.getServiceTip();
@@ -12,12 +12,24 @@ public class Startup {
        System.out.println(golferOne.getServiceTip());
        
 
-        
+        //LSP
        TipCalculator humanOrder = new FoodServiceTipCalculator();
        
        humanOrder.getServiceTip();
        
        
+       //LSP
+       TipCalculator gamblerOne = new GamingDealerServiceTipCalculator();
+       
+       gamblerOne.getServiceTip();
+       
+       
+       GamingDealerServiceTipCalculator humanGambler = new GamingDealerServiceTipCalculator();
+       
+       
+       humanGambler.setServiceTip(5000.00, "Good");
+       
+        System.out.println(humanGambler.getServiceTip());
         
        FoodServiceTipCalculator serverOne = new FoodServiceTipCalculator();
        
