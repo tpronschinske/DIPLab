@@ -18,7 +18,9 @@ public class ValetServiceTipCalculator implements TipCalculator {
     private final double fairRate = 0.20;
     private final double poorRate = 0.10;
    
-    
+    public ValetServiceTipCalculator(){
+        
+    }
     
     @Override
     public final double getServiceTip(){

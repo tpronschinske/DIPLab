@@ -22,6 +22,11 @@ public class CaddieServiceTipCalculator implements TipCalculator {
     private final double caddieFee = 60.00;
 
     
+    public CaddieServiceTipCalculator(){
+        
+    }
+    
+    
       @Override
     public final double getCustomServiceTip(){
         return tip;

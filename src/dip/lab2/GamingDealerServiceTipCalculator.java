@@ -17,8 +17,10 @@ public class GamingDealerServiceTipCalculator implements TipCalculator {
     private final double goodRate = 0.20;
     private final double fairRate = 0.15;
     private final double poorRate = 0.10;
-    
+    private String Rating;
 
+    public GamingDealerServiceTipCalculator() {
+    }
     
     @Override
     public final double getServiceTip(){

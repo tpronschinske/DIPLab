@@ -18,10 +18,11 @@ public class BartenderServiceTipCalculator implements TipCalculator {
     private final double fairRate = 0.20;
     private final double poorRate = 0.10;
     
+    public BartenderServiceTipCalculator(){
+        
+    }
     
-    
-    
-    
+
     @Override
     public final double getServiceTip(){
         return bartenderTip;

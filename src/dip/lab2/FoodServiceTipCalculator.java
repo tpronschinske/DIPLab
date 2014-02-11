@@ -17,6 +17,11 @@ public class FoodServiceTipCalculator implements TipCalculator {
     private final double poorRate = 0.10;
     
     
+    public FoodServiceTipCalculator(){
+        
+    }
+    
+    
     @Override
     public final double getServiceTip(){
         return tip;

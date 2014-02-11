@@ -19,7 +19,9 @@ public class TaxiServiceTipCalculator implements TipCalculator{
     private final double poorRate = 0.10;
     
     
-    
+    public TaxiServiceTipCalculator(){
+        
+    }
     
     
     @Override
