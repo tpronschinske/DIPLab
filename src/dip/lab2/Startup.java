@@ -5,6 +5,20 @@ public class Startup {
     public static void main(String[] args) {
         
    
+       TipCalculator golferOne = new CaddieServiceTipCalculator();
+       
+       golferOne.getServiceTip();
+       
+       System.out.println(golferOne.getServiceTip());
+       
+
+        
+       TipCalculator humanOrder = new FoodServiceTipCalculator();
+       
+       humanOrder.getServiceTip();
+       
+       
+        
        FoodServiceTipCalculator serverOne = new FoodServiceTipCalculator();
        
        serverOne.setServiceTip(127.85,"Good");
