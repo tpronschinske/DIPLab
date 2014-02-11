@@ -13,8 +13,12 @@ package dip.lab2;
 public interface TipCalculator {
     
     
-    //Using the tip calculation method which is common to foodservice & baggageservice
+    
     public abstract double getServiceTip();
+    
+    public abstract double getCustomServiceTip();
+    
+    
     
     
 }

@@ -9,14 +9,15 @@ package dip.lab2;
  * @author your name goes here
  */
 public class FoodServiceTipCalculator implements TipCalculator {
+    
     private double billEntry = 0.0;
     private double tip = 0.0;
     private final double goodRate = 0.25;
     private final double fairRate = 0.20;
     private final double poorRate = 0.10;
-    private String Rating;
     
-    private double finalTipCalculation;
+    
+    
     
     
     @Override
@@ -24,7 +25,19 @@ public class FoodServiceTipCalculator implements TipCalculator {
         return tip;
     }
     
-  public final void setServiceTip(double billEntry, String Rating){
+    
+    @Override
+    public final double getCustomServiceTip(){
+        return tip;
+    }
+    
+    
+    public final void setCustomServiceTip(double billEntry, double customRate){
+        tip = billEntry * customRate;
+    }
+    
+    
+    public final void setServiceTip(double billEntry, String Rating){
         switch (Rating) {
             case "Good":
                 tip = billEntry * goodRate;
@@ -47,12 +60,7 @@ public class FoodServiceTipCalculator implements TipCalculator {
         this.billEntry = billEntry;
     }
 
-    public double getFinalTipCalculation() {
-        return finalTipCalculation;
-    }
-
-    public void setFinalTipCalculation(double finalTipCalculation) {
-        this.finalTipCalculation = finalTipCalculation;
-    }
+   
+   
 
 }

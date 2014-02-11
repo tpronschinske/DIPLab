@@ -10,19 +10,22 @@ package dip.lab2;
  *
  * @author Celeste
  */
-public class CaddieServiceTipCalculator implements TipCalculator {
-    
-    private double billEntry;
-    private double tip;
+public class SalanServiceTipCalculator implements TipCalculator {
+    private double billEntry = 0.0;
+    private double tip = 0.0;
     private final double goodRate = 0.25;
     private final double fairRate = 0.20;
-    private final double poorRate = 0.15;
-    
+    private final double poorRate = 0.10;
     private String Rating;
-    private final double caddieFee = 60.00;
-
     
-      @Override
+    
+    
+    @Override
+    public final double getServiceTip(){
+        return tip;
+    }
+    
+    @Override
     public final double getCustomServiceTip(){
         return tip;
     }
@@ -33,35 +36,20 @@ public class CaddieServiceTipCalculator implements TipCalculator {
     }
     
     
-      public final void setServiceTip(String Rating){
+  public final void setServiceTip(double billEntry, String Rating){
         switch (Rating) {
             case "Good":
-                tip = caddieFee * goodRate;
+                tip = billEntry * goodRate;
                 break;
             case "Fair":
-                tip = caddieFee * fairRate;
+                tip = billEntry * fairRate;
                 break;
             case "Poor":
-                tip = caddieFee * poorRate;
+                tip = billEntry * poorRate;
                 break; 
         }
     }
 
-    public String getRating() {
-        return Rating;
-    }
-
-    public void setRating(String Rating) {
-        this.Rating = Rating;
-    }
-
-    public double getTip() {
-        return tip;
-    }
-
-    public void setTip(double tip) {
-        this.tip = tip;
-    }
 
     public double getBillEntry() {
         return billEntry;
@@ -70,9 +58,4 @@ public class CaddieServiceTipCalculator implements TipCalculator {
     public void setBillEntry(double billEntry) {
         this.billEntry = billEntry;
     }
-    
-    @Override
-     public final double getServiceTip(){
-         return tip;
-     }
 }

@@ -15,7 +15,7 @@ public class BaggageServiceTipCalculator implements TipCalculator {
     private final double goodRate = 0.25;
     private final double fairRate = 0.20;
     private final double poorRate = 0.10;
-    private String Rating;
+    
   
     private double baseTipPerBag = 1.00;
     private int bagCount;
@@ -24,7 +24,16 @@ public class BaggageServiceTipCalculator implements TipCalculator {
     public final double getServiceTip(){
         return tip;
     }
+    
+    @Override
+    public final double getCustomServiceTip(){
+        return tip;
+    }
 
+    public final void setCustomServiceTip(double billEntry, double customRate){
+        tip = billEntry * customRate;
+    }
+    
     public final void setServiceTip(double billEntry, String Rating){
         switch (Rating) {
             case "Good":
