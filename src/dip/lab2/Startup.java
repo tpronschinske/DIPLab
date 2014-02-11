@@ -21,12 +21,16 @@ public class Startup {
         
        FoodServiceTipCalculator serverOne = new FoodServiceTipCalculator();
        
+       //double bill amount & String service(good/fair/poor)
+       
        serverOne.setServiceTip(127.85,"Good");
       
        System.out.println(serverOne.getServiceTip());
        
        
        BaggageServiceTipCalculator serverTwo = new BaggageServiceTipCalculator();
+       
+       //double bill amount & String service(good/fair/poor)
        
        serverTwo.setServiceTip(100.00, "Fair");
         
@@ -35,10 +39,18 @@ public class Startup {
         
        CaddieServiceTipCalculator serverThree = new CaddieServiceTipCalculator();
        
+       //pre-set caddie bag fee $60.00 & String Service (good/fair/poor)
+       
        serverThree.setServiceTip("Good");
        
        System.out.println(serverThree.getServiceTip());
         
+       
+       SalanServiceTipCalculator customerOne = new SalanServiceTipCalculator();
+       
+       //salan service type (HairCut,HairCutPlusShampoo,HairCutPlusColor) & String Service (good/fair/poor)
+       
+       customerOne.setServiceTip("HairCut", "Good");
      
         
     }

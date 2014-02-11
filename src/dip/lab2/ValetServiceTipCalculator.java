@@ -11,12 +11,13 @@ package dip.lab2;
  * @author Celeste
  */
 public class ValetServiceTipCalculator implements TipCalculator {
-    private double billEntry = 0.0;
+    
+    private double customerValetBill = 0.0;
     private double tip = 0.0;
     private final double goodRate = 0.25;
     private final double fairRate = 0.20;
     private final double poorRate = 0.10;
-    private String Rating;
+   
     
     
     @Override
@@ -30,31 +31,31 @@ public class ValetServiceTipCalculator implements TipCalculator {
     }
     
     
-    public final double setCustomServiceTip(double billEntry, double customRate){
-        return tip = billEntry * customRate;
+    public final double setCustomServiceTip(double customerValetBill, double customRate){
+        return tip = customerValetBill * customRate;
     }
     
-    public final void setServiceTip(double billEntry, String Rating){
+    public final void setServiceTip(double customerValetBill, String Rating){
         switch (Rating) {
             case "Good":
-                tip = billEntry * goodRate;
+                tip = customerValetBill * goodRate;
                 break;
             case "Fair":
-                tip = billEntry * fairRate;
+                tip = customerValetBill * fairRate;
                 break;
             case "Poor":
-                tip = billEntry * poorRate;
+                tip = customerValetBill * poorRate;
                 break; 
         }
     }
 
 
-    public double getBillEntry() {
-        return billEntry;
+    public double getCustomerValetBill() {
+        return customerValetBill;
     }
 
-    public void setBillEntry(double billEntry) {
-        this.billEntry = billEntry;
+    public void setCustomerValetBill(double customerValetBill) {
+        this.customerValetBill = customerValetBill;
     }
     
 }

@@ -12,8 +12,8 @@ package dip.lab2;
  */
 public class BartenderServiceTipCalculator implements TipCalculator {
         
-    private double billEntry = 0.0;
-    private double tip = 0.0;
+    private double customerBarBill = 0.0;
+    private double bartenderTip = 0.0;
     private final double goodRate = 0.25;
     private final double fairRate = 0.20;
     private final double poorRate = 0.10;
@@ -24,42 +24,42 @@ public class BartenderServiceTipCalculator implements TipCalculator {
     
     @Override
     public final double getServiceTip(){
-        return tip;
+        return bartenderTip;
     }
     
     
     @Override
     public final double getCustomServiceTip(){
-        return tip;
+        return bartenderTip;
     }
     
     
-    public final void setCustomServiceTip(double billEntry, double customRate){
-        tip = billEntry * customRate;
+    public final void setCustomServiceTip(double customerBarBill, double customRate){
+        bartenderTip = customerBarBill * customRate;
     }
     
     
-    public final void setServiceTip(double billEntry, String Rating){
+    public final void setServiceTip(double customerBarBill, String Rating){
         switch (Rating) {
             case "Good":
-                tip = billEntry * goodRate;
+                bartenderTip = customerBarBill * goodRate;
                 break;
             case "Fair":
-                tip = billEntry * fairRate;
+                bartenderTip = customerBarBill * fairRate;
                 break;
             case "Poor":
-                tip = billEntry * poorRate;
+                bartenderTip = customerBarBill * poorRate;
                 break; 
         }
     }
 
 
-    public double getBillEntry() {
-        return billEntry;
+    public double getCustomerBarBill() {
+        return customerBarBill;
     }
 
-    public void setBillEntry(double billEntry) {
-        this.billEntry = billEntry;
+    public void setCustomerBarBill(double customerBarBill) {
+        this.customerBarBill = customerBarBill;
     }
 
 }

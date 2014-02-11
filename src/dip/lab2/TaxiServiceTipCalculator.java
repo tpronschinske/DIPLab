@@ -12,7 +12,7 @@ package dip.lab2;
  */
 public class TaxiServiceTipCalculator implements TipCalculator{
         
-    private double billEntry = 0.0;
+    private double taxiRunningMeterBill = 0.0;
     private double tip = 0.0;
     private final double goodRate = 0.25;
     private final double fairRate = 0.20;
@@ -34,32 +34,32 @@ public class TaxiServiceTipCalculator implements TipCalculator{
     }
     
     
-    public final void setCustomServiceTip(double billEntry, double customRate){
-        tip = billEntry * customRate;
+    public final void setCustomServiceTip(double taxiRunningMeterBill, double customRate){
+        tip = taxiRunningMeterBill * customRate;
     }
     
     
-    public final void setServiceTip(double billEntry, String Rating){
+    public final void setServiceTip(double taxiRunningMeterBill, String Rating){
         switch (Rating) {
             case "Good":
-                tip = billEntry * goodRate;
+                tip = taxiRunningMeterBill * goodRate;
                 break;
             case "Fair":
-                tip = billEntry * fairRate;
+                tip = taxiRunningMeterBill * fairRate;
                 break;
             case "Poor":
-                tip = billEntry * poorRate;
+                tip = taxiRunningMeterBill * poorRate;
                 break; 
         }
     }
 
 
-    public double getBillEntry() {
-        return billEntry;
+    public double getTaxiRunningMeterBill() {
+        return taxiRunningMeterBill;
     }
 
-    public void setBillEntry(double billEntry) {
-        this.billEntry = billEntry;
+    public void setTaxiRunningMeterBill(double taxiRunningMeterBill) {
+        this.taxiRunningMeterBill = taxiRunningMeterBill;
     }
 
 }

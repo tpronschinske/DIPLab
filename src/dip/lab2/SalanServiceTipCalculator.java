@@ -39,7 +39,7 @@ public class SalanServiceTipCalculator implements TipCalculator {
         salonStylistTip = billEntry * customRate;
     }
        
-  public final void setServiceTip(String ServiceType,double billEntry, String Rating){
+  public final void setServiceTip(String ServiceType, String Rating){
         switch (ServiceType) {
             case "HairCut":
                 switch (Rating) {
