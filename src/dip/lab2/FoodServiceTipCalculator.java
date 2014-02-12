@@ -10,57 +10,52 @@ package dip.lab2;
  */
 public class FoodServiceTipCalculator implements TipCalculator {
     
-    private double customerFoodBill = 0.0;
+    private double billEntry = 0.0;
     private double tip = 0.0;
     private final double goodRate = 0.25;
     private final double fairRate = 0.20;
     private final double poorRate = 0.10;
+    private String Rating;
     
     
-    public FoodServiceTipCalculator(){
-        
+    public FoodServiceTipCalculator(String Rating, double billEntry){
+        this.setRating(Rating);
+        this.setBillEntry(billEntry);
     }
-    
     
     @Override
     public final double getServiceTip(){
-        return tip;
-    }
-    
-    
-    @Override
-    public final double getCustomServiceTip(){
-        return tip;
-    }
-    
-    
-    public final void setCustomServiceTip(double customerFoodBill, double customRate){
-        tip = customerFoodBill * customRate;
-    }
-    
-    
-    public final void setServiceTip(double customerFoodBill, String Rating){
-        switch (Rating) {
+         switch (Rating) {
             case "Good":
-                tip = customerFoodBill * goodRate;
+                tip = billEntry * goodRate;
                 break;
             case "Fair":
-                tip = customerFoodBill * fairRate;
+                tip = billEntry * fairRate;
                 break;
             case "Poor":
-                tip = customerFoodBill * poorRate;
+                tip = billEntry * poorRate;
                 break; 
         }
+        return tip;
     }
 
-
-    public double getCustomerFoodBill() {
-        return customerFoodBill;
+    public double getBillEntry() {
+        return billEntry;
     }
 
-    public void setCustomerFoodBill(double customerFoodBill) {
-        this.customerFoodBill = customerFoodBill;
+    public void setBillEntry(double billEntry) {
+        this.billEntry = billEntry;
     }
+
+    public String getRating() {
+        return Rating;
+    }
+
+    public void setRating(String Rating) {
+        this.Rating = Rating;
+    }
+    
+
 
    
    

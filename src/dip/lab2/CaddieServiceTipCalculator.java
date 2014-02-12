@@ -22,24 +22,14 @@ public class CaddieServiceTipCalculator implements TipCalculator {
     private final double caddieFee = 60.00;
 
     
-    public CaddieServiceTipCalculator(){
-        
+    public CaddieServiceTipCalculator(String Rating){
+        this.setRating(Rating);
     }
     
     
-      @Override
-    public final double getCustomServiceTip(){
-        return tip;
-    }
-    
-    
-    public final void setCustomServiceTip(double billEntry, double customRate){
-        tip = billEntry * customRate;
-    }
-    
-    
-      public final void setServiceTip(String Rating){
-        switch (Rating) {
+    @Override
+    public final double getServiceTip(){
+                switch (Rating) {
             case "Good":
                 tip = caddieFee * goodRate;
                 break;
@@ -50,7 +40,9 @@ public class CaddieServiceTipCalculator implements TipCalculator {
                 tip = caddieFee * poorRate;
                 break; 
         }
+          return tip;
     }
+    
 
     public String getRating() {
         return Rating;
@@ -68,16 +60,4 @@ public class CaddieServiceTipCalculator implements TipCalculator {
         this.tip = tip;
     }
 
-    public double getBillEntry() {
-        return billEntry;
-    }
-
-    public void setBillEntry(double billEntry) {
-        this.billEntry = billEntry;
-    }
-    
-    @Override
-     public final double getServiceTip(){
-         return tip;
-     }
 }

@@ -15,72 +15,88 @@ public class SalanServiceTipCalculator implements TipCalculator {
     private final double hairCut = 15.95;
     private final double hairCutPlusShampoo = 21.95;
     private final double hairCutPlusColor = 31.85;
-            
-    private double salonStylistTip = 0.0;
+        
+    private String ServiceType;
+    private String Rating;
+    private double tip = 0.0;
     private final double goodRate = 0.25;
     private final double fairRate = 0.20;
     private final double poorRate = 0.10;
     
-    public SalanServiceTipCalculator(){
-        
+    public SalanServiceTipCalculator(String ServiceType, String Rating){
+        this.setServiceType(ServiceType);
+        this.setRating(Rating);
     }
     
     
     @Override
     public final double getServiceTip(){
-        return salonStylistTip;
-    }
-    
-    @Override
-    public final double getCustomServiceTip(){
-        return salonStylistTip;
-    }
-    
-    
-    public final void setCustomServiceTip(double billEntry, double customRate){
-        salonStylistTip = billEntry * customRate;
-    }
-       
-  public final void setServiceTip(String ServiceType, String Rating){
         switch (ServiceType) {
             case "HairCut":
                 switch (Rating) {
                     case "Good":
-                        salonStylistTip = hairCut * goodRate;
+                        tip = hairCut * goodRate;
                         break;
                     case "Fair":
-                        salonStylistTip = hairCut * fairRate;
+                        tip = hairCut * fairRate;
                         break;
                     case "Poor":
-                        salonStylistTip = hairCut * poorRate;
+                        tip = hairCut * poorRate;
                         break;
                         
                 }
             case "HairCutPlusShampoo":
                 switch (Rating) {
                     case "Good":
-                        salonStylistTip = hairCutPlusShampoo * goodRate;
+                        tip = hairCutPlusShampoo * goodRate;
                         break;
                     case "Fair":
-                        salonStylistTip = hairCutPlusShampoo * fairRate;
+                        tip = hairCutPlusShampoo * fairRate;
                         break;
                     case "Poor":
-                        salonStylistTip = hairCutPlusShampoo * poorRate;
-                        break;
-                        
+                        tip = hairCutPlusShampoo * poorRate;
+                        break;     
                 }
             case "HairCutPlusColor":
                 switch (Rating) {
                     case "Good":
-                        salonStylistTip = hairCutPlusColor * goodRate;
+                        tip = hairCutPlusColor * goodRate;
                         break;
                     case "Fair":
-                        salonStylistTip = hairCutPlusColor * fairRate;
+                        tip = hairCutPlusColor * fairRate;
                         break;
                     case "Poor":
-                        salonStylistTip = hairCutPlusColor * poorRate;
+                        tip = hairCutPlusColor * poorRate;
                         break;
                 }
         }
+        return tip;
+    }
+
+    public String getRating() {
+        return Rating;
+    }
+
+    public void setRating(String Rating) {
+        this.Rating = Rating;
+    }
+
+    public double getTip() {
+        return tip;
+    }
+
+    public void setTip(double tip) {
+        this.tip = tip;
+    }
+
+    public String getServiceType() {
+        return ServiceType;
+    }
+
+    public void setServiceType(String ServiceType) {
+        this.ServiceType = ServiceType;
+    }
+
+    
   }
-}
+

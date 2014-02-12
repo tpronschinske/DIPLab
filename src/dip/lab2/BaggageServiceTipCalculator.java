@@ -17,28 +17,19 @@ public class BaggageServiceTipCalculator implements TipCalculator {
     private final double poorRate = 0.10;
     private double baseTipPerBag = 1.00;
     private int bagCount;
+    private String Rating;
     
     
-    public BaggageServiceTipCalculator() {
-    
+    public BaggageServiceTipCalculator(String rating, double billEntry, int bagCount) {
+        this.setRating(rating);
+        this.setBillEntry(billEntry);
+        this.setBagCount(bagCount);
     }
+    
     
     @Override
     public final double getServiceTip(){
-        return tip;
-    }
-    
-    @Override
-    public final double getCustomServiceTip(){
-        return tip;
-    }
-
-    public final void setCustomServiceTip(double billEntry, double customRate){
-        tip = billEntry * customRate;
-    }
-    
-    public final void setServiceTip(double billEntry, String Rating){
-        switch (Rating) {
+         switch (Rating) {
             case "Good":
                 tip = billEntry * goodRate + (baseTipPerBag * bagCount);
                 break;
@@ -49,7 +40,9 @@ public class BaggageServiceTipCalculator implements TipCalculator {
                 tip = billEntry * poorRate + (baseTipPerBag * bagCount);
                 break; 
         }
+        return tip;
     }
+ 
 
   
     public double getBillEntry() {
@@ -75,4 +68,21 @@ public class BaggageServiceTipCalculator implements TipCalculator {
     public void setBagCount(int bagCount) {
         this.bagCount = bagCount;
     }
+
+    public double getTip() {
+        return tip;
+    }
+
+    public void setTip(double tip) {
+        this.tip = tip;
+    }
+
+    public String getRating() {
+        return Rating;
+    }
+
+    public void setRating(String Rating) {
+        this.Rating = Rating;
+    }
+
 }

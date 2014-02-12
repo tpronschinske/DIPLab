@@ -13,47 +13,33 @@ package dip.lab2;
 public class GamingDealerServiceTipCalculator implements TipCalculator {
         
     private double playerWinningsEntry = 0.0;
-    private double dealerTip = 0.0;
+    private double tip = 0.0;
     private final double goodRate = 0.20;
     private final double fairRate = 0.15;
     private final double poorRate = 0.10;
     private String Rating;
 
-    public GamingDealerServiceTipCalculator() {
+    public GamingDealerServiceTipCalculator(String Rating, double playerWinningsEntry) {
+        this.setRating(Rating);
+        this.setPlayerWinningsEntry(playerWinningsEntry);
     }
     
     @Override
     public final double getServiceTip(){
-        return dealerTip;
-    }
-    
-    
-    @Override
-    public final double getCustomServiceTip(){
-        return dealerTip;
-    }
-    
-    
-    public final void setCustomServiceTip(double playerWinningsEntry, double customRate){
-        dealerTip = playerWinningsEntry * customRate;
-    }
-    
-    
-    public final void setServiceTip(double playerWinningsEntry, String Rating){
-        switch (Rating) {
+         switch (Rating) {
             case "Good":
-                dealerTip = playerWinningsEntry * goodRate;
+                tip = playerWinningsEntry * goodRate;
                 break;
             case "Fair":
-                dealerTip = playerWinningsEntry * fairRate;
+                tip = playerWinningsEntry * fairRate;
                 break;
             case "Poor":
-                dealerTip = playerWinningsEntry * poorRate;
+                tip = playerWinningsEntry * poorRate;
                 break; 
         }
+        return tip;
     }
-
-
+    
     public double getPlayerWinningsEntry() {
         return playerWinningsEntry;
     }
@@ -62,4 +48,22 @@ public class GamingDealerServiceTipCalculator implements TipCalculator {
         this.playerWinningsEntry = playerWinningsEntry;
     }
 
+    public double getTip() {
+        return tip;
+    }
+
+    public void setTip(double tip) {
+        this.tip = tip;
+    }
+
+    public String getRating() {
+        return Rating;
+    }
+
+    public void setRating(String Rating) {
+        this.Rating = Rating;
+    }
+
+    
+    
 }

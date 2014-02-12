@@ -14,31 +14,20 @@ public class ValetServiceTipCalculator implements TipCalculator {
     
     private double customerValetBill = 0.0;
     private double tip = 0.0;
+    private String Rating;
     private final double goodRate = 0.25;
     private final double fairRate = 0.20;
     private final double poorRate = 0.10;
    
-    public ValetServiceTipCalculator(){
+    public ValetServiceTipCalculator(String Rating, double customerValetBill){
+        this.setRating(Rating);
+        this.setCustomerValetBill(customerValetBill);
         
     }
     
     @Override
     public final double getServiceTip(){
-        return tip;
-    }
-    
-    @Override
-    public final double getCustomServiceTip(){
-        return tip;
-    }
-    
-    
-    public final double setCustomServiceTip(double customerValetBill, double customRate){
-        return tip = customerValetBill * customRate;
-    }
-    
-    public final void setServiceTip(double customerValetBill, String Rating){
-        switch (Rating) {
+           switch (Rating) {
             case "Good":
                 tip = customerValetBill * goodRate;
                 break;
@@ -49,6 +38,7 @@ public class ValetServiceTipCalculator implements TipCalculator {
                 tip = customerValetBill * poorRate;
                 break; 
         }
+        return tip;
     }
 
 
@@ -59,5 +49,15 @@ public class ValetServiceTipCalculator implements TipCalculator {
     public void setCustomerValetBill(double customerValetBill) {
         this.customerValetBill = customerValetBill;
     }
+
+    public String getRating() {
+        return Rating;
+    }
+
+    public void setRating(String Rating) {
+        this.Rating = Rating;
+    }
+    
+    
     
 }

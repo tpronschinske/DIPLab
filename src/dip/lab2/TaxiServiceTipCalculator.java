@@ -14,35 +14,21 @@ public class TaxiServiceTipCalculator implements TipCalculator{
         
     private double taxiRunningMeterBill = 0.0;
     private double tip = 0.0;
+    private String Rating;
     private final double goodRate = 0.25;
     private final double fairRate = 0.20;
     private final double poorRate = 0.10;
     
     
-    public TaxiServiceTipCalculator(){
-        
+    public TaxiServiceTipCalculator(String Rating, double taxiRunningMeterBill){
+        this.setRating(Rating);
+        this.setTaxiRunningMeterBill(taxiRunningMeterBill);
     }
     
     
     @Override
     public final double getServiceTip(){
-        return tip;
-    }
-    
-    
-    @Override
-    public final double getCustomServiceTip(){
-        return tip;
-    }
-    
-    
-    public final void setCustomServiceTip(double taxiRunningMeterBill, double customRate){
-        tip = taxiRunningMeterBill * customRate;
-    }
-    
-    
-    public final void setServiceTip(double taxiRunningMeterBill, String Rating){
-        switch (Rating) {
+          switch (Rating) {
             case "Good":
                 tip = taxiRunningMeterBill * goodRate;
                 break;
@@ -53,8 +39,8 @@ public class TaxiServiceTipCalculator implements TipCalculator{
                 tip = taxiRunningMeterBill * poorRate;
                 break; 
         }
+        return tip;
     }
-
 
     public double getTaxiRunningMeterBill() {
         return taxiRunningMeterBill;
@@ -64,4 +50,13 @@ public class TaxiServiceTipCalculator implements TipCalculator{
         this.taxiRunningMeterBill = taxiRunningMeterBill;
     }
 
+    public String getRating() {
+        return Rating;
+    }
+
+    public void setRating(String Rating) {
+        this.Rating = Rating;
+    }
+
+    
 }

@@ -11,14 +11,7 @@ package dip.lab2;
  * @author Celeste
  */
 public interface TipCalculator {
-    
-    
-    
+      
     public abstract double getServiceTip();
-    
-    public abstract double getCustomServiceTip();
-    
-    
-    
     
 }

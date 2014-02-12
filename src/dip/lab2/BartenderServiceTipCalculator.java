@@ -12,55 +12,54 @@ package dip.lab2;
  */
 public class BartenderServiceTipCalculator implements TipCalculator {
         
-    private double customerBarBill = 0.0;
-    private double bartenderTip = 0.0;
+    private double billEntry = 0.0;
+    private double tip = 0.0;
+    private String Rating;
     private final double goodRate = 0.25;
     private final double fairRate = 0.20;
     private final double poorRate = 0.10;
     
-    public BartenderServiceTipCalculator(){
-        
+    public BartenderServiceTipCalculator(String rating, double billEntry){
+        this.setRating(rating);
+        this.setBillEntry(billEntry);
     }
     
 
     @Override
     public final double getServiceTip(){
-        return bartenderTip;
-    }
-    
-    
-    @Override
-    public final double getCustomServiceTip(){
-        return bartenderTip;
-    }
-    
-    
-    public final void setCustomServiceTip(double customerBarBill, double customRate){
-        bartenderTip = customerBarBill * customRate;
-    }
-    
-    
-    public final void setServiceTip(double customerBarBill, String Rating){
-        switch (Rating) {
+           switch (Rating) {
             case "Good":
-                bartenderTip = customerBarBill * goodRate;
+                tip = billEntry * goodRate;
                 break;
             case "Fair":
-                bartenderTip = customerBarBill * fairRate;
+                tip = billEntry * fairRate;
                 break;
             case "Poor":
-                bartenderTip = customerBarBill * poorRate;
+                tip = billEntry * poorRate;
                 break; 
         }
+        return tip;
+    
+    }
+    
+
+    public String getRating() {
+        return Rating;
     }
 
-
-    public double getCustomerBarBill() {
-        return customerBarBill;
+    public void setRating(String Rating) {
+        this.Rating = Rating;
     }
 
-    public void setCustomerBarBill(double customerBarBill) {
-        this.customerBarBill = customerBarBill;
+    public double getBillEntry() {
+        return billEntry;
     }
+
+    public void setBillEntry(double billEntry) {
+        this.billEntry = billEntry;
+    }
+
+   
+
 
 }

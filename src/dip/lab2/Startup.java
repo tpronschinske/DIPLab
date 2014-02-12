@@ -4,67 +4,46 @@ public class Startup {
    
     public static void main(String[] args) {
         
-        //LSP
-       TipCalculator golferOne = new CaddieServiceTipCalculator();
-       
-       golferOne.getServiceTip();
-       
-       System.out.println(golferOne.getServiceTip());
-       
-
-        //LSP
-       TipCalculator humanOrder = new FoodServiceTipCalculator();
-       
-       humanOrder.getServiceTip();
-       
-       
-       //LSP
-       TipCalculator gamblerOne = new GamingDealerServiceTipCalculator();
-       
-       gamblerOne.getServiceTip();
-       
-       
-       GamingDealerServiceTipCalculator humanGambler = new GamingDealerServiceTipCalculator();
-       
-       
-       humanGambler.setServiceTip(5000.00, "Good");
-       
-        System.out.println(humanGambler.getServiceTip());
+//        TipCalculator calculateTip = new BaggageServiceTipCalculator("Good",25.00,5); 
+//        TipService service = new TipService(calculateTip);
+//        double tip = service.getTipFromCalculator();
+//        System.out.println("Your tip amount is: " + tip);
+                
+ 
+//        TipCalculator calculateTip = new BartenderServiceTipCalculator("Fair", 38.50);    
+//        TipService service = new TipService(calculateTip);
+//        double tip = service.getTipFromCalculator();
+//        System.out.println("Your tip amount is: " + tip);
+//        
         
-       FoodServiceTipCalculator serverOne = new FoodServiceTipCalculator();
-       
-       //double bill amount & String service(good/fair/poor)
-       
-       serverOne.setServiceTip(127.85,"Good");
-      
-       System.out.println(serverOne.getServiceTip());
-       
-       
-       BaggageServiceTipCalculator serverTwo = new BaggageServiceTipCalculator();
-       
-       //double bill amount & String service(good/fair/poor)
-       
-       serverTwo.setServiceTip(100.00, "Fair");
+//          TipCalculator calculateTip = new CaddieServiceTipCalculator("Good");
+//          TipService service = new TipService(calculateTip);
+//          double tip = service.getTipFromCalculator();
+//          System.out.println("Your tip amount is: " + tip);
+//        
         
-       System.out.println(serverTwo.getServiceTip());
+//          TipCalculator calculateTip = new SalanServiceTipCalculator("HairCut","Good");
+//          TipService service = new TipService(calculateTip);
+//          double tip = service.getTipFromCalculator();
+//          System.out.println("Your tip amount is: " + tip);
+            
+//          TipCalculator calculateTip = new GamingDealerServiceTipCalculator("Fair", 1000.0);
+//          TipService service = new TipService(calculateTip);
+//          double tip = service.getTipFromCalculator();
+//          System.out.println("Your tip amount is: " + tip);
         
+//          TipCalculator calculateTip = new TaxiServiceTipCalculator("Poor", 48.97);
+//          TipService service = new TipService(calculateTip);
+//          double tip = service.getTipFromCalculator();
+//          System.out.println("Your tip amount is: " + tip);
         
-       CaddieServiceTipCalculator serverThree = new CaddieServiceTipCalculator();
-       
-       //pre-set caddie bag fee $60.00 & String Service (good/fair/poor)
-       
-       serverThree.setServiceTip("Good");
-       
-       System.out.println(serverThree.getServiceTip());
+            TipCalculator calculateTip = new ValetServiceTipCalculator("Poor", 25.37);
+            TipService service = new TipService(calculateTip);
+            double tip = service.getTipFromCalculator();
+            System.out.println("Your tip amount is: " + tip);
         
-       
-       SalanServiceTipCalculator customerOne = new SalanServiceTipCalculator();
-       
-       //salan service type (HairCut,HairCutPlusShampoo,HairCutPlusColor) & String Service (good/fair/poor)
-       
-       customerOne.setServiceTip("HairCut", "Good");
-     
-        
+            
+            
     }
 
 }
