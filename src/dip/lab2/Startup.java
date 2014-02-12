@@ -10,6 +10,12 @@ public class Startup {
 //        System.out.println("Your tip amount is: " + tip);
                 
  
+//        TipCalculator calculateTip = new FoodServiceTipCalculator("Fair", 38.50);    
+//        TipService service = new TipService(calculateTip);
+//        double tip = service.getTipFromCalculator();
+//        System.out.println("Your tip amount is: " + tip);
+        
+        
 //        TipCalculator calculateTip = new BartenderServiceTipCalculator("Fair", 38.50);    
 //        TipService service = new TipService(calculateTip);
 //        double tip = service.getTipFromCalculator();
